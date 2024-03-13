@@ -39,7 +39,7 @@ class Cheese {
             return countryOfOrigin;
         }
 
-        string getImageAddresss() const {
+        string getImageAddress() const {
             return imageAddress;
         }
 
@@ -56,7 +56,23 @@ class Cheese {
             countryOfOrigin = chOrigin;
         }
 
-        void setImageAddresss(string chImageAddress) {
+        void setImageAddress(string chImageAddress) {
             imageAddress = chImageAddress;
         }
 };
+
+// Main method to test the cheese object
+int main() {
+    // Testing constructor
+    Cheese gouda("Gouda", 5.99, "Netherlands", "https://cdn11.bigcommerce.com/s-7c08qbh/images/stencil/1280x1280/products/622/10286/smoked-gouda__28176.1673289033.jpg?c=2");
+
+    // Using getter methods
+    cout << "Name: " << gouda.getName() << endl;
+    cout << "Price: $" << gouda.getPrice() << endl;
+    cout << "Country of origin: " << gouda.getCountryOfOrigin() << endl;
+    cout << "Image Address: " << gouda.getImageAddress() << endl;
+
+    // Using set method for price
+    gouda.setPrice(8.89);
+    cout << "New price: $" << gouda.getPrice() << endl;
+}
