@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Curd Catalog</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/0d73cb4142.css" crossorigin="anonymous">
+    <style>
+      
+      ul.navbar {
+        list-style-type: none; /* Remove bullets */
+        margin: 0;
+        padding: 0;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: large;
+        font-weight: bold;
+        height: 90px;
+        background-color: rgb(255, 242, 0); /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right,rgb(65, 182, 255), rgb(0, 255, 179) , rgb(255, 213, 0)); 
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      li {
+        float:inline-end
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 35px 40px;
+        text-decoration: none;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      li a:hover {
+        background-color: rgb(255, 196, 0);
+      }
+
+      h1 {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color: black;
+      }
+
+      h2 {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      p {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        color: black;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: Proxima system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        justify-content: center;
+        align-items: center;
+        left: 100px;
+        color:white;
+      }
+
+      .flex-container > div {
+        height: 250px;
+        width: 200px;
+        font-family: Proxima system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #458fff;
+        margin: 20px;
+        padding: 20px;
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+      }
+
+      .progress-container {
+        left: 0;
+        top: 90px;
+        margin: 0;
+        width: 100%;
+        height: 8px;
+        background: rgb(3, 163, 255);
+        position: fixed;
+      }
+
+      .progress-bar {
+        padding: 0%;
+        margin: 0;
+        height: 8px;
+        background: rgb(255, 251, 0);
+        width: 0%;
+        position: fixed;
+      }
+
+      footer {
+      background-color: #fff200; /* Dark background color */
+      color: #ffffff; /* Text color */
+      padding: 20px;
+      text-align: center;
+      /* Add any additional styling for the footer */
+      position:relative;
+        bottom: 0;
+        left: 0;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 30px;
+    }
+
+    .hero {
+      background-image: url('path/to/hero-image.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff; /* Text color for hero section */
+      padding: 100px 0;
+      text-align: center;
+      /* Add any additional styling for the hero section */
+    }
+
+    </style>
+    <script>
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+      }
+    </script>
+  </head>
+  <body style="background-color: rgb(255, 255, 255)">
+    <nav>   
+      <ul class="navbar">
+        <a href="home.html" style="position:relative; left: 20px; top: 12px">
+          <img src="imgs/curd-logo.png" alt="logo" width="110 top: 50%;">
+        </a>
+        <li><a href="mailto:lorijj@miamioh.edu">CONTACT US</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="database.html">CHEESE DATABASE</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a class="navbar" href="index.html">HOME</a></li>
+      </ul>
+    </nav>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+    <br><br><br><br><br>
+    <!-- Home Page's content -->
+    <main>
+        <h1 style="font-family: Proxima system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif-regular; color: rgb(0, 0, 0); text-align: center;">Curd Catalog</h1>
+
+        <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+          <h1 style="text-align: center;">Discover the World of Cheese</h1>
+          <p>Explore our extensive cheese database and find your new favorite cheese!</p>
+          <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+          </div>
+          <br><br><br><br><br>
+          <!-- Filter and table of my cheese & content -->
+          <main>
+            <h1 style="font-family:Proxima system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white"><b>My cheese</b></h1>
+            <!-- Filter buttons -->
+      
+            
+          <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+              <div class="flex-container">
+                <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div>  
+                  <div class="cheese">
+                    <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                    <div class="desc" style="font-size:large"><br>America</div> 
+                    <div class="title"><b>Cheddar</b></div>
+                </div> 
+                  <div class="cheese">
+                      <div class="img" ><img src="imgs/cheese.jpeg" alt="Cheddar" width="120" format-content="center"></div> 
+                      <div class="desc" style="font-size:large"><br>America</div> 
+                      <div class="title"><b>Cheddar</b></div>
+                  </div> 
+                </div>  
+                </div>  
+                  
+              </div>
+              
+
+  <!-- Footer Section -->
+  <footer>
+      <div class="footer-content">
+          <h3>Contact Us</h3>
+          <p>Email: info@cheesedatabase.com</p>
+          <p>Phone: 123-456-7890</p>
+      </div>
+      <div class="footer-links">
+          <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Service</a></li>
+              <li><a href="#faq">FAQs</a></li>
+          </ul>
+      </div>
+      <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+  </footer>
+  
+  </body>
+</html>
