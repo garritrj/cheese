@@ -26,4 +26,37 @@ class Cheese {
         Cheese(string chName, double chPrice, string chOrigin, string chImageAddress) :
         name(chName), price(chPrice), countryOfOrigin(chOrigin), imageAddress(chImageAddress) {}
 
+        // Getter methods for cheese object
+        string getName() const {
+            return name;
+        }
+
+        double getPrice() const {
+            return price;
+        }
+
+        string getCountryOfOrigin() const {
+            return countryOfOrigin;
+        }
+
+        string getImageAddresss() const {
+            return imageAddress;
+        }
+
+        // Setter methods for cheese object
+        void setName(string chName) {
+            name = chName;
+        }
+
+        void setPrice(double chPrice) {
+            price = chPrice;
+        }
+
+        void setCountryOfOrigin(string chOrigin) {
+            countryOfOrigin = chOrigin;
+        }
+
+        void setImageAddresss(string chImageAddress) {
+            imageAddress = chImageAddress;
+        }
 };
