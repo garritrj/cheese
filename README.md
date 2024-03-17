@@ -12,7 +12,7 @@ Import Database:
 2. Open MYSQL 8.0 COMMAND LINE CLIENT and type in the following commands, "CREATE DATABASE curd_catalog;", "USE curd_catalog;", "SOURCE C:\Program Files\MySQL\MySQL Server 8.0\bin\curdCatalog.sql" (!THE FINAL COMMAND SHOULD NOT HAVE A SEMICOLON!)
 
 Interface with MySQL using Visual Studio:
-1. Once MySQL has been set up and the database has been imported, connect to the server through Visual Studio (This video provides a good tutorial to do so "https://youtu.be/Cz3WcZLRaWc?si=5owljyy1-EhFgLxj" [6:13 - 6:46])
+1. Once MySQL has been set up and the database has been imported, connect to the server through Visual Studio (This video provides a good tutorial on how to do so "https://youtu.be/Cz3WcZLRaWc?si=5owljyy1-EhFgLxj" [6:13 - 6:46])
 2. !UNDER CONSTRUCTION! [This next section will explain how to interact with the server using JavaScript, I plan on having it done hopefully by Wednesday, but here is a video that talks about it in the meantime "https://youtu.be/_g8ljkh9JNY?si=WAO-oh4VcA5h7FH0"]
 3. ...
 
