@@ -20,4 +20,4 @@ Exporting Database:
 1. Open WINDOWS COMMAND PROMPT as !ADMINISTATOR!
 2. Navigate to your MySQL bin folder using cd commands (if you installed MySQL to the default location, it should be something like "cd C:\Program Files\MySQL\MySQL Server 8.0\bin")
 3. Type in the command "mysqldump -u [username] -p curd_catalog > curdCatalog.sql" (if you set your username to 'local' the command should be "mysqldump -u local -p curd_catalog > curdCatalog.sql")
-4. The SQL file should now be located in the MySQL installation bin folder with the name 'curdCatalog.sql'
+4. The SQL file should now be located in the bin folder of your MySQL installation with the name 'curdCatalog.sql'
