@@ -26,6 +26,9 @@ class Cheese {
         Cheese(string chName, double chPrice, string chOrigin, string chImageAddress) :
         name(chName), price(chPrice), countryOfOrigin(chOrigin), imageAddress(chImageAddress) {}
 
+        // Destructor Method for cheese object
+        ~Cheese() {}
+
         // Getter methods for cheese object
         string getName() const {
             return name;
