@@ -18,14 +18,16 @@ class Cheese {
         double price;
         // Country of origin (may change)
         string countryOfOrigin;
+        // Description of cheese object
+        string desc;
         // Image address for a picture of the cheese (may change)
         string imageAddress;
 
     public:
         // Constructors for cheese object
-        Cheese(): id(0), name("Cheese"), price(0.0),
+        Cheese(): desc("Cheese"), id(0), name("Cheese"), price(0.0),
         countryOfOrigin("USA"), imageAddress("") {}
-        Cheese(int chId, string chName, double chPrice, string chOrigin, string chImageAddress) :
+        Cheese(int chId, string chName, double chPrice, string chOrigin, string chDesc, string chImageAddress) :
         id(chId), name(chName), price(chPrice), countryOfOrigin(chOrigin), imageAddress(chImageAddress) {}
 
         // Destructor Method for cheese object
@@ -48,6 +50,10 @@ class Cheese {
             return countryOfOrigin;
         }
 
+        string getDescritption() const {
+            return desc;
+        }
+
         string getImageAddress() const {
             return imageAddress;
         }
@@ -67,6 +73,10 @@ class Cheese {
 
         void setCountryOfOrigin(string chOrigin) {
             countryOfOrigin = chOrigin;
+        }
+
+        void setDescription(string chDesc) {
+            desc = chDesc;
         }
 
         void setImageAddress(string chImageAddress) {
