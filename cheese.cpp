@@ -10,23 +10,34 @@ using namespace std;
 class Cheese {
     // Variables for cheese object
     private:
+        // ID of the cheese
+        int id;
         // Name of the cheese
         string name;
         // Price of the cheese
         double price;
         // Country of origin (may change)
         string countryOfOrigin;
+        // Description of cheese object
+        string desc;
         // Image address for a picture of the cheese (may change)
         string imageAddress;
 
     public:
         // Constructors for cheese object
-        Cheese(): name("Cheese"), price(0.0),
+        Cheese(): desc("Cheese"), id(0), name("Cheese"), price(0.0),
         countryOfOrigin("USA"), imageAddress("") {}
-        Cheese(string chName, double chPrice, string chOrigin, string chImageAddress) :
-        name(chName), price(chPrice), countryOfOrigin(chOrigin), imageAddress(chImageAddress) {}
+        Cheese(int chId, string chName, double chPrice, string chOrigin, string chDesc, string chImageAddress) :
+        id(chId), name(chName), price(chPrice), countryOfOrigin(chOrigin), imageAddress(chImageAddress) {}
+
+        // Destructor Method for cheese object
+        ~Cheese() {}
 
         // Getter methods for cheese object
+        int getId() const {
+            return id;
+        }
+
         string getName() const {
             return name;
         }
@@ -39,11 +50,19 @@ class Cheese {
             return countryOfOrigin;
         }
 
+        string getDescritption() const {
+            return desc;
+        }
+
         string getImageAddress() const {
             return imageAddress;
         }
 
         // Setter methods for cheese object
+        void setId(int chId) {
+            id = chId;
+        }
+
         void setName(string chName) {
             name = chName;
         }
@@ -56,6 +75,10 @@ class Cheese {
             countryOfOrigin = chOrigin;
         }
 
+        void setDescription(string chDesc) {
+            desc = chDesc;
+        }
+
         void setImageAddress(string chImageAddress) {
             imageAddress = chImageAddress;
         }
@@ -64,7 +87,7 @@ class Cheese {
 // Main method to test the cheese object
 int main() {
     // Testing constructor
-    Cheese gouda("Gouda", 5.99, "Netherlands", "https://cdn11.bigcommerce.com/s-7c08qbh/images/stencil/1280x1280/products/622/10286/smoked-gouda__28176.1673289033.jpg?c=2");
+    Cheese gouda(1, "Gouda", 5.99, "Netherlands", "https://cdn11.bigcommerce.com/s-7c08qbh/images/stencil/1280x1280/products/622/10286/smoked-gouda__28176.1673289033.jpg?c=2");
 
     // Using getter methods
     cout << "Name: " << gouda.getName() << endl;
