@@ -25,10 +25,9 @@ class Cheese {
 
     public:
         // Constructors for cheese object
-        Cheese(): desc("Cheese"), id(0), name("Cheese"), price(0.0),
-        countryOfOrigin("USA"), imageAddress("") {}
+        Cheese(): id(0), desc("Cheese"), name("Cheese"), price(0.0), countryOfOrigin("USA"), imageAddress("") {}
         Cheese(int chId, string chName, double chPrice, string chOrigin, string chDesc, string chImageAddress) :
-        id(chId), name(chName), price(chPrice), countryOfOrigin(chOrigin), imageAddress(chImageAddress) {}
+        id(chId), name(chName), price(chPrice), countryOfOrigin(chOrigin), desc(chDesc), imageAddress(chImageAddress) {}
 
         // Destructor Method for cheese object
         ~Cheese() {}
@@ -82,12 +81,25 @@ class Cheese {
         void setImageAddress(string chImageAddress) {
             imageAddress = chImageAddress;
         }
+
+        // Sorting methods
+        static bool compareByName(const Cheese& a, const Cheese& b) {
+            return a.name < b.name;
+        }
+
+        static bool compareByCountry(const Cheese& a, const Cheese& b) {
+            return a.countryOfOrigin < b.countryOfOrigin;
+        }
+
+        static bool compareById(const Cheese& a, const Cheese& b) {
+            return a.id < b.id;
+        }
 };
 
 // Main method to test the cheese object
 int main() {
     // Testing constructor
-    Cheese gouda(1, "Gouda", 5.99, "Netherlands", "https://cdn11.bigcommerce.com/s-7c08qbh/images/stencil/1280x1280/products/622/10286/smoked-gouda__28176.1673289033.jpg?c=2");
+    Cheese gouda(1, "Gouda", 5.99, "Netherlands", "Cheesy", "https://cdn11.bigcommerce.com/s-7c08qbh/images/stencil/1280x1280/products/622/10286/smoked-gouda__28176.1673289033.jpg?c=2");
 
     // Using getter methods
     cout << "Name: " << gouda.getName() << endl;
