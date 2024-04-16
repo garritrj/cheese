@@ -21,3 +21,67 @@ Exporting Database:
 2. Navigate to your MySQL bin folder using cd commands (if you installed MySQL to the default location, it should be something like "cd C:\Program Files\MySQL\MySQL Server 8.0\bin")
 3. Type in the command "mysqldump -u [username] -p curd_catalog > curdCatalog.sql" (if you set your username to 'local' the command should be "mysqldump -u local -p curd_catalog > curdCatalog.sql")
 4. The SQL file should now be located in the bin folder of your MySQL installation with the name 'curdCatalog.sql'
+
+
+--@block --delete table
+DROP TABLE cheeses;
+
+--@block --create data table
+CREATE TABLE cheeses(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cheeseName VARCHAR(255) NOT NULL,
+    imageAddress TEXT,
+    ingredients TEXT,
+    countryOfOrigin VARCHAR(255),
+    region VARCHAR(255),
+    cheeseType VARCHAR(255),
+    texture VARCHAR(255),
+    rind VARCHAR(255),
+    color VARCHAR(255),
+    flavour VARCHAR(255),
+    aroma VARCHAR(255)
+);
+
+--@block --add single row to table
+INSERT INTO cheeses (cheeseName, imageAddress, ingredients, countryOfOrigin, region, cheeseTypes, texture, rind, color, flavour, aroma)
+VALUES (
+    'Briquette de Brebis',
+    'https://www.cheese.com/briquette-de-brebis/#',
+    'made from unpasteurized sheeps'' milk',
+    'France',
+    'Averyon',
+    'soft',
+    'creamy',
+    'natural',
+    'white',
+    'nutty',
+    'nutty'
+);
+INSERT INTO cheeses (cheeseName, imageAddress, ingredients, countryOfOrigin, region, cheeseTypes, texture, rind, color, flavour, aroma)
+VALUES (
+    'Burrata',
+    'https://www.cheese.com/burrata/#',
+    'made from pasteurized or unpasteurized water buffalo''s milk',
+    'Italy and United States',
+    'Apulia',
+    'fresh soft, artisan',
+    'creamy and stringy',
+    'leaf wrapped',
+    'white',
+    'buttery, milky',
+    'fresh, milky'
+);
+INSERT INTO cheeses (cheeseName, imageAddress, ingredients, countryOfOrigin, region, cheeseTypes, texture, rind, color, flavour, aroma)
+VALUES (
+    'Bouncing Berry',
+    'https://www.cheese.com/bouncing-berry/#',
+    'made from cow''s milk',
+    'United Kingdom',
+    'N/A',
+    'hard',
+    'creamy',
+    'waxed',
+    'pale yello',
+    'fruity',
+    'N/A'
+);
