@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Curd Catalog</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/0d73cb4142.css" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('imgs/wallpaper.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #ffffff; /* Text color for body */
+        }
+
+        ul.navbar {
+            list-style-type: none; /* Remove bullets */
+            margin: 0;
+            padding: 0;
+            font-size: large;
+            font-weight: bold;
+            height: 90px;
+            background-color: rgb(255, 242, 0); /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, rgb(65, 182, 255), rgb(0, 255, 179), rgb(255, 213, 0));
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        ul.navbar li {
+            float: right; /* Adjust alignment */
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 35px 40px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: rgb(255, 196, 0);
+        }
+
+        section.hero {
+            background-image: url('path/to/hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* Text color for hero section */
+            padding: 100px 0;
+            text-align: center;
+            margin-top: 90px; /* Adjust for navbar height */
+        }
+
+        section.hero h1,
+        section.hero p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        section.hero input[type="text"],
+        section.hero input[type="email"],
+        section.hero button {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        section.hero button {
+            background-color: rgb(65, 182, 255);
+            color: white;
+            cursor: pointer;
+        }
+
+        section.hero button:hover {
+            background-color: rgb(0, 128, 255);
+        }
+
+        /* Cheese Cards Container */
+        .cheese-cards-container {
+            display: flex; /* Use flexbox for horizontal layout */
+            justify-content: space-around; /* Evenly distribute items horizontally with space around */
+        }
+
+        /* Cheese Card Styling */
+        .cheese-card {
+            width: 30%; /* Adjust the width as needed */
+            padding: 20px;
+            background-color: rgb(65, 182, 255); /* Semi-transparent background */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cheese-card img {
+            width: 100%; /* Make the images fill the container */
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: block; /* Ensure centered alignment */
+            margin: 0 auto; /* Center horizontally */
+            max-height: 200px; /* Limit max height */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .cheese-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .cheese-card p {
+            font-size: 1rem;
+        }
+
+        .progress-container {
+            left: 0;
+            top: 90px;
+            margin: 0;
+            width: 100%;
+            height: 8px;
+            background: rgb(3, 163, 255);
+            position: fixed;
+        }
+
+        .progress-bar {
+            padding: 0%;
+            margin: 0;
+            height: 8px;
+            background: rgb(255, 251, 0);
+            width: 0%;
+            position: fixed;
+        }
+
+        /* Introduction Section Styling */
+.introduction {
+    max-width: 800px; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Add padding for spacing */
+    text-align: justify; /* Justify text */
+    color: #ffffff; /* Text color */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Font family */
+}
+
+/* Introduction Section Heading Styling */
+.introduction h2, .introduction h3 {
+    color: rgb(255, 255, 255); /* Heading color */
+    text-align: center; /* Center heading */
+}
+
+/* Introduction Section Paragraph Styling */
+.introduction p {
+    line-height: 1.5; /* Adjust line height */
+    margin-bottom: 20px; /* Add margin for spacing between paragraphs */
+}
+
+/* Introduction Section Image Styling */
+.introduction img {
+    width: 200px; /* Adjust size as needed */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+}
+
+
+
+        footer {
+            background-color: rgb(65, 182, 255); /* Dark background color */
+            color: #ffffff; /* Text color */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            clear: both; /* Clear float */
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .social-icon:hover {
+            color: #e5e5e5; /* Lighten color on hover */
+        }
+    </style>
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+</head>
+<body style="background-color: rgb(255, 255, 255)">
+<nav>
+    <ul class="navbar">
+        <a href="index.html" style="position:relative; left: 20px; top: 12px">
+            <img src="imgs/curd-logo.png" alt="logo" width="110 top: 50%;">
+        </a>
+        <li><a href="mailto:lorijj@miamioh.edu">CONTACT US</a></li>
+        <li><a href="blog.html">SUBSCRIPTION</a></li>
+        <li><a href="database.html">CHEESE DATABASE</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a class="navbar" href="index.html">HOME</a></li>
+    </ul>
+</nav>
+<div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>
+<br><br><br><br><br>
+<!-- Home Page's content -->
+<main>
+    <div id="cheeseDetails">
+        <!-- Details of the selected cheese will be dynamically displayed here -->
+    </div>
+
+    <script>
+        // Function to extract the cheese name from the URL query parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get the cheese name from the URL
+        var cheeseName = getParameterByName('name');
+
+        // Define an object with cheese details
+        var cheeseDetails = {
+    "Cheddar": {
+        "country": "America",
+        "image": "imgs/cheese.jpeg"
+    },
+    "Gouda": {
+        "country": "Netherlands",
+        "image": "imgs/cheese.jpeg"
+    },
+    "Brie": {
+        "country": "France",
+        "image": "imgs/cheese.jpeg"
+    },
+    "Mozzarella": {
+        "country": "Italy",
+        "image": "imgs/cheese.jpeg"
+    },
+    "Swiss": {
+        "country": "Switzerland",
+        "image": "imgs/cheese.jpeg"
+    },
+    "Parmesan": {
+        "country": "Italy",
+        "image": "imgs/cheese.jpg"
+    },
+    "Blue Cheese": {
+        "country": "Various",
+        "image": "imgs/cheese_blue.jpg"
+    },
+    "Camembert": {
+        "country": "France",
+        "image": "imgs/cheese_camembert.jpg"
+    },
+    "Feta": {
+        "country": "Greece",
+        "image": "imgs/cheese_feta.jpg"
+    },
+    "Ricotta": {
+        "country": "Italy",
+        "image": "imgs/cheese_ricotta.jpg"
+    },
+    "Provolone": {
+        "country": "Italy",
+        "image": "imgs/cheese_provolone.jpg"
+    },
+    "Munster": {
+        "country": "France",
+        "image": "imgs/cheese_munster.jpg"
+    },
+    "Havarti": {
+        "country": "Denmark",
+        "image": "imgs/cheese_havarti.jpg"
+    },
+    "Colby Jack": {
+        "country": "United States",
+        "image": "imgs/cheese_colbyjack.jpg"
+    },
+    "Monterey Jack": {
+        "country": "United States",
+        "image": "imgs/cheese_montereyjack.jpg"
+    },
+    "Pepper Jack": {
+        "country": "United States",
+        "image": "imgs/cheese_pepperjack.jpg"
+    },
+    "Mascarpone": {
+        "country": "Italy",
+        "image": "imgs/cheese_mascarpone.jpg"
+    },
+    "Burrata": {
+        "country": "Italy",
+        "image": "imgs/cheese_burrata.jpg"
+    },
+    "Goat Cheese": {
+        "country": "Various",
+        "image": "imgs/cheese_goatcheese.jpg"
+    },
+    "Boursin": {
+        "country": "France",
+        "image": "imgs/cheese_boursin.jpg"
+    },
+    "Limburger": {
+        "country": "Germany",
+        "image": "imgs/cheese_limburger.jpg"
+    },
+    "Emmental": {
+        "country": "Switzerland",
+        "image": "imgs/cheese_emmental.jpg"
+    },
+    "Edam": {
+        "country": "Netherlands",
+        "image": "imgs/cheese_edam.jpg"
+    },
+    "Halloumi": {
+        "country": "Cyprus",
+        "image": "imgs/cheese_halloumi.jpg"
+    }
+};
+
+
+        // Display the details of the selected cheese
+        var cheeseInfo = cheeseDetails[cheeseName];
+        if (cheeseInfo) {
+            var cheeseDetailsDiv = document.getElementById("cheeseDetails");
+            cheeseDetailsDiv.innerHTML = "<h2>" + cheeseName + "</h2>" +
+                                          "<p>Country: " + cheeseInfo.country + "</p>" +
+                                          "<img src='" + cheeseInfo.image + "' alt='" + cheeseName + "' width='200'>";
+        } else {
+            // If cheese details not found
+            var cheeseDetailsDiv = document.getElementById("cheeseDetails");
+            cheeseDetailsDiv.innerHTML = "<p>Details not found for " + cheeseName + "</p>";
+        }
+    </script>
+
+  <!-- Footer Section -->
+  <footer>
+      <div class="footer-content">
+          <h3>Contact Us</h3>
+          <p>Email: info@cheesedatabase.com</p>
+          <p>Phone: 123-456-7890</p>
+      </div>
+      <!--
+        <div class="footer-links">
+          <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Service</a></li>
+              <li><a href="#faq">FAQs</a></li>
+          </ul>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      -->
+      
+      
+  </footer>
+  
+  </body>
+</html>
